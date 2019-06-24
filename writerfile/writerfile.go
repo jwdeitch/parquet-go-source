@@ -26,6 +26,10 @@ func (self *WriterFile) Seek(offset int64, pos int) (int64, error) {
 	return 0, nil
 }
 
+func (self *WriterFile) Sync() error {
+	return nil
+}
+
 func (self *WriterFile) Read(b []byte) (int, error) {
 	return 0, nil
 }

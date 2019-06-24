@@ -76,6 +76,10 @@ func (self *HdfsFile) Seek(offset int64, pos int) (int64, error) {
 	return self.FileReader.Seek(offset, pos)
 }
 
+func (self *HdfsFile) Sync() error {
+	return self.FileWriter.Flush()
+}
+
 func (self *HdfsFile) Read(b []byte) (cnt int, err error) {
 	var n int
 	ln := len(b)

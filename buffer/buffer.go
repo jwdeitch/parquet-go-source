@@ -41,6 +41,10 @@ func (bf BufferFile) Seek(offset int64, pos int) (int64, error) {
 	return bf.Reader.Seek(offset, pos)
 }
 
+func (bf BufferFile) Sync() error {
+	return nil
+}
+
 // Read reads data form BufferFile into p.
 func (bf BufferFile) Read(p []byte) (cnt int, err error) {
 	var n int

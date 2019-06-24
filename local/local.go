@@ -27,6 +27,10 @@ func (self *LocalFile) Create(name string) (source.ParquetFile, error) {
 	return myFile, err
 }
 
+func (self *LocalFile) Sync() error {
+	return self.File.Sync()
+}
+
 func (self *LocalFile) Open(name string) (source.ParquetFile, error) {
 	var (
 		err error

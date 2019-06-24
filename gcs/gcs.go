@@ -64,6 +64,10 @@ func NewGcsFileReaderWithClient(ctx context.Context, client *storage.Client, pro
 	return res.Open(name)
 }
 
+func (self *GcsFile) Sync() error {
+	return nil
+}
+
 func (self *GcsFile) Create(name string) (source.ParquetFile, error) {
 	var err error
 	gcs := new(GcsFile)

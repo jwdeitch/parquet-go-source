@@ -137,6 +137,10 @@ func (s *S3File) Seek(offset int64, whence int) (int64, error) {
 	return s.offset, nil
 }
 
+func (self *S3File) Sync() error {
+	return nil
+}
+
 // Read up to len(p) bytes into p and return the number of bytes read
 func (s *S3File) Read(p []byte) (n int, err error) {
 	if s.fileSize > 0 && s.offset >= s.fileSize {

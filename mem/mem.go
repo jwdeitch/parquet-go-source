@@ -82,6 +82,10 @@ func (fs *MemFile) Seek(offset int64, pos int) (int64, error) {
 	return fs.File.Seek(offset, pos)
 }
 
+func (fs *MemFile) Sync() error {
+	return nil
+}
+
 // Read - read file
 func (fs *MemFile) Read(b []byte) (cnt int, err error) {
 	var n int
